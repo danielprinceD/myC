@@ -8,8 +8,8 @@
       "args": [],
       "stopAtEntry": false,
       "externalConsole": true,
-      "cwd": "c:/Users/21cs0/Desktop/C",
-      "program": "c:/Users/21cs0/Desktop/C/build/Debug/outDebug",
+      "cwd": "c:/Users/21cs0/Desktop/Git/myC",
+      "program": "c:/Users/21cs0/Desktop/Git/myC/build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [
