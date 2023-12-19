@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <string.h>
 
+int count = 0;
 struct Student
 {
     char name[30];
@@ -9,6 +10,7 @@ struct Student
     int age;
     int phoneno;
 };
+struct Student *ptr;
 
 void add_stud(struct Student *ptr, int num)
 {
@@ -24,7 +26,8 @@ void add_stud(struct Student *ptr, int num)
 
 void display(struct Student *ptr, int num)
 {
-    printf("\n%s\t\t", (ptr + num)->name);
+    printf("%d\t\t", num + 1);
+    printf("%s\t\t", (ptr + num)->name);
     printf("%s\t\t", (ptr + num)->rollno);
     printf("%d\t\t", (ptr + num)->age);
     printf("%d\t\t", (ptr + num)->phoneno);
@@ -34,15 +37,13 @@ void delete(struct Student *ptr, char num[])
 {
     if (ptr->rollno == num)
     {
-        }
+    }
 }
 
 int main()
 {
     int choice, no_stud, i = 0, d_stud, del;
-    struct Student new;
-    struct Student *ptr;
-    int count = 0;
+    ptr = (struct Student *)malloc(1000 * sizeof(struct Student));
 
     do
     {
@@ -59,9 +60,8 @@ int main()
             scanf("%d", &no_stud);
 
             printf("Enter Student Details : \n");
-
-            ptr = (struct Student *)malloc(no_stud * sizeof(struct Student));
-            for (i = i; i < no_stud; i++)
+            no_stud += count;
+            for (i = count; i < no_stud; i++)
             {
                 add_stud(ptr, i);
                 count++;
@@ -69,13 +69,11 @@ int main()
 
             break;
         case 2:
-            printf("How many students you want to display : ");
-            scanf("%d", &d_stud);
-            printf("\nName\t\tRollno\t\tAge\t\tPhone number");
-            for (i = 0; i < no_stud; i++)
+            printf("\ns.no\tName\t\tRollno\t\tAge\t\tPhone number\n");
+            for (i = 0; i < count; i++)
             {
                 display(ptr, i);
-                printf("\n\n");
+                printf("\n");
             }
             break;
         case 3:
@@ -86,6 +84,8 @@ int main()
             {
                 delete (ptr + i, get_roll);
             }
+        case 4:
+            printf("Thank you....!");
         }
-    } while (!(choice == 0 || choice == 4));
+    } while (choice < 4);
 }
