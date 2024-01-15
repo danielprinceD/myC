@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML</title>
+    <script src="javaS.js"></script>
+    <style>
+        #Loader
+        {
+            animation : rotation 2s infinite;
+            color: aliceblue;
+            border-radius: 50%;
+            border-color: aliceblue;
+            border-style: solid;
+            border-width: 6px;
+            height: 150px;
+            width: 150px;
+            border-bottom-style:none;
+        }
+        #bg
+        {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: black;
+            height: 300px;
+            width: 300px;
+        }
+        #load 
+        {
+            position:absolute;
+            color: aliceblue;
+            font-size: 18px;
+        }
+        @keyframes rotation
+        {
+            0%{
+                transform: rotate(0deg);
+            }
+            100%{transform: rotate(360deg);}
+        }
+
+    </style>
+</head>
+<body>
+    <h1 id="headerTag">Hi</h1>
+
+    <div id="bg">
+        <div id="Loader">
+        </div>
+        <p id="load">Loading...</p>
+    </div>
+
+</body>
+</html>
